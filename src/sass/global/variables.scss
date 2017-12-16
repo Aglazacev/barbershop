@@ -2,17 +2,12 @@
 $c-primary: #000;
 $c-secondary: #fff;
 
-$c-bg-primary: #1e7874;
-$c-bg-secondary: #1c8a85;
-$c-bg-third: #186068;
+$c-bg-primary: #000;
 
 //Типографика
-$f-primary: "OpenSans-Regular", "Arial", sans-serif;
-$f-secondary: "RobotoSlab-Regular", "Arial", sans-serif;
+$f-primary: "PTSansNarrowRegular", "Arial", sans-serif;
+$f-primary-bold: "PTSansNarrowBold", "Arial", sans-serif;
 
-$f-sub-menu-size: 12px;
-
-
-$f-text-size: 17px;
-
-$f-base-lh: 1.54;
+$fs-def: 14px;
+$fs-secondary: 16px;
+$fs-title: 30px;
