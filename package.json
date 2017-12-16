@@ -1,7 +1,7 @@
 {
-  "name": "Evromed",
+  "name": "Barbershop",
   "version": "1.0.0",
-  "description": "Evromed",
+  "description": "Barbershop",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
