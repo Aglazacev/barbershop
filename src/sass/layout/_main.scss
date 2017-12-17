@@ -1,0 +1,12 @@
+.main-page {
+  background-image: url(../img/main-bg.jpg);
+}
+
+.main-page .wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  padding-top: 60px;
+  padding-bottom: 65px;
+}

@@ -12,7 +12,7 @@
 
       width: 18px;
       height: 16px;
-      background-image: url(../img/sprite.png);
+      background-image: url(../../img/sprite.png);
       @include sprite-position($icon-login);
     }
   }

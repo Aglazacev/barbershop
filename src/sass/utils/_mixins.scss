@@ -1,6 +1,6 @@
 // Миксин для удобной вставки SVG
-@import "sprite-svg.scss";
-@import "../librares/_mq";
+@import "sprite-svg";
+@import "../vendors/mq";
 
 $mq-base-font-size: 16px !default;
 

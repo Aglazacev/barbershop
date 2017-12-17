@@ -1,17 +1,16 @@
-@import "global/normalize";
+@import "vendors/normalize";
 
-@import "global/fonts";
-@import "global/variables";
-@import "global/sprite-svg";
-@import "global/mixins";
-@import "global/icons";
-@import "global/scaffolding";
+@import "utils/variables";
+@import "utils/sprite-svg";
+@import "utils/mixins";
+@import "utils/sprite";
 
-@import "sprite";
+@import "base/fonts";
+@import "base/base";
 
-@import "layout/body";
-@import "layout/wrapper";
+@import "layout/grid";
 @import "layout/header";
 @import "layout/main-nav";
+@import "layout/main";
 
-@import "block/user-block";
+@import "components/user-block";

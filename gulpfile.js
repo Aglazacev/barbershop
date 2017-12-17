@@ -26,7 +26,7 @@ var $ = {
 
 // Настройка SASS
 gulp.task('sass', function(){                      // Создаем таск SASS
-    return gulp.src('src/sass/main.scss') // Берем источник
+    return gulp.src('src/sass/_main.scss') // Берем источник
         .pipe(plumber())                           // отлавливаем ошибки при компиляции из SASS в CSS
         .pipe(sass().on('error', sass.logError))   // Преобразуем SASS в CSS
         .pipe(autoprefixer(
@@ -54,10 +54,10 @@ gulp.task('sass', function(){                      // Создаем таск SA
 gulp.task('sprite', function () {
     var spriteData = gulp.src('src/img/icons/*.png').pipe(spritesmith({
         imgName: 'sprite.png',
-        cssName: 'sprite.scss'
+        cssName: '_sprite.scss'
     }));
     spriteData.pipe(gulp.dest('src/img'));
-    spriteData.css.pipe(gulp.dest('src/sass'));
+    spriteData.css.pipe(gulp.dest('src/sass/utils'));
 });
 
 // Создание SVG спрайта
@@ -77,8 +77,8 @@ gulp.task('svgSprite', function () {
                     bust: false,
                     render: {
                         scss: {
-                            dest: "../sass/global/sprite-svg.scss",
-                            template: "src/sass/templates/_sprite_template.scss"
+                            dest: "../sass/utils/_sprite-svg.scss",
+                            template: "src/sass/utils/_sprite_template.scss"
                         }
                     }
                 }

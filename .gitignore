@@ -222,9 +222,10 @@ out
 node_modules/
 
 src/css/
-src/sass/global/sprite-svg.scss
+src/sass/utils/_sprite-svg.scss
 src/img/icons-svg/
 src/js/
 /src/img/sprite.png
 /src/img/sprite.scss
-/src/sass/sprite.scss
+/src/sass/utils/_sprite.scss
+/src/img/_sprite.scss
