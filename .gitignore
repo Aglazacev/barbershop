@@ -225,3 +225,6 @@ src/css/
 src/sass/global/sprite-svg.scss
 src/img/icons-svg/
 src/js/
+/src/img/sprite.png
+/src/img/sprite.scss
+/src/sass/sprite.scss
