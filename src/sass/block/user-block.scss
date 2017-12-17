@@ -1,0 +1,19 @@
+.user-block {
+  &__login {
+    position: relative;
+    display: block;
+    padding: 30px 20px 30px 53px;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 50%;
+      margin-top: -8px;
+
+      width: 18px;
+      height: 16px;
+      background-image: url(../img/sprite.png);
+      @include sprite-position($icon-login);
+    }
+  }
+}

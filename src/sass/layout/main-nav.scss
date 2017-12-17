@@ -1,0 +1,10 @@
+.main-nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  &__item {
+    display: inline-block;
+    padding: 30px 20px;
+  }
+}
