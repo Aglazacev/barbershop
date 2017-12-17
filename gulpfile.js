@@ -32,13 +32,13 @@ gulp.task('sass', function(){                      // Создаем таск SA
         .pipe(autoprefixer(
             ['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }
         ))                                        // Создаем префиксы
-        .pipe(combineMq({beautify: false}))      // Группируем медиа запросы
         .pipe(size({                             // Вывод в консоль размер CSS
             showFiles: true
         }))
         .pipe(gulp.dest('src/css/'))
-        .pipe(csso())                            // Сжимаем
         .pipe(rename({suffix: '.min'}))          // Добавляем суффикс .min
+        .pipe(combineMq({beautify: false}))      // Группируем медиа запросы
+        .pipe(csso())                            // Сжимаем
         .pipe(size({                             // Вывод в консоль размер CSS после минификации
             showFiles: true
         }))
@@ -48,6 +48,16 @@ gulp.task('sass', function(){                      // Создаем таск SA
         }))
         .pipe(gulp.dest('src/css/'))              // Выгружаем минифицированный css
         .pipe(browserSync.reload({stream: true}));
+});
+
+// Создание PNG спрайтов
+gulp.task('sprite', function () {
+    var spriteData = gulp.src('src/img/icons/*.png').pipe(spritesmith({
+        imgName: 'sprite.png',
+        cssName: 'sprite.scss'
+    }));
+    spriteData.pipe(gulp.dest('src/img'));
+    spriteData.css.pipe(gulp.dest('src/sass'));
 });
 
 // Создание SVG спрайта
@@ -113,11 +123,12 @@ gulp.task('scripts', function() {
 });
 
 // Вся работа в фоне
-gulp.task('watch', ['browser-sync', 'sass', 'scripts', 'svgSprite'], function() {
+gulp.task('watch', ['browser-sync', 'sass', 'scripts', 'sprite', 'svgSprite'], function() {
     gulp.watch('src/sass/**/*.scss', ['sass']);     // Наблюдение за sass файлами в папке sass
     gulp.watch('src/*.html', browserSync.reload);   // Наблюдение за HTML файлами в корне проекта
     gulp.watch('src/js/modules/*.js', ['scripts']);      // Наблюдение за JS файлами в папке js
     gulp.watch('src/img/icons-svg/*.svg', ['svgSprite']);  // Наблюдение за SVG файлами в папке img
+    gulp.watch('src/img/icons/*.png', ['sprite']);  // Наблюдение за PNG для генерации спрайта
 });
 
 // --> Перенос проекта в продакшн --> //
