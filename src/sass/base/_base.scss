@@ -22,18 +22,28 @@ li {
   list-style-position: inside;
 }
 
+dl, dd, dt {
+  margin: 0;
+  padding: 0;
+}
+
 p {
   margin: 0;
 }
 
 button {
   border: none;
+  font-family: inherit;
   background: none;
   color: inherit;
   &:hover,
   &:active{
     outline: none;
   }
+}
+
+figure {
+  margin: 0;
 }
 
 a {
@@ -52,6 +62,14 @@ input {
 .body-page {
   font-family: $f-primary-bold;
   font-size: $fs-def;
+  line-height: 1.7;
 
   color: $c-primary;
+}
+
+.base-title {
+  margin-bottom: 25px;
+
+  font-size: $fs-title;
+  text-transform: uppercase;
 }
